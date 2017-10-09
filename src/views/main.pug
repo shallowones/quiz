@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+  .page.show
+    .main.lf_q_start_page
+      .title Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры
+
+      .article
+        .article__plus +
+        img(src="images/mockup.png").article__img
+        .article__desc Полезная статья<br>Как сэкономить<br>до 100 000 рублей
+
+      .space-b
+        .control
+          label(for="control-1").control__label Введите Вашу почту
+          .control-area.mail
+            input(id="control-1", placeholder="ivanov yandex.ru").control__input
+          .control__desc Для отправки файла
+        .control
+          label(for="control-2").control__label Введите номер телефона
+          .control-area.phone
+            input(id="control-2", placeholder="7 999 999 99 99").control__input
+          .control__desc Для смс подтверждения
+
+      .center
+        .control
+          button(type="button").control__button.lf_q_start Открыть результаты
+
+      .agree
+        input(type="checkbox", id="check-1", checked).agree__input
+        label(for="check-1").agree__label Вы соглашаетесь с условиями обработки персональных данных
+

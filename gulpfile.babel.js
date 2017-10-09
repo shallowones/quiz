@@ -13,6 +13,9 @@ import LessPluginCleanCSS from 'less-plugin-clean-css';
 import del from 'del';
 import browserSync from 'browser-sync';
 
+import babel from 'gulp-babel';
+import uglify from 'gulp-uglify';
+
 browserSync.create();
 
 const plumberOptions = {
@@ -23,7 +26,12 @@ const develop = true;
 export const clean = () => del('./build');
 
 export function images() {
-  return gulp.src('./src/images/**/*', {since: gulp.lastRun('images')})
+  let path = [
+    './src/images/*.jpg',
+    './src/images/*.png',
+    './src/images/*.ico'
+  ];
+  return gulp.src(path, {since: gulp.lastRun('images')})
     .pipe(imageMin({
       svgoPlugins: [{
         convertPathData: false
@@ -73,10 +81,16 @@ export function views() {
     .pipe(gulp.dest('./build'));
 }
 
+export function fonts () {
+  return gulp
+    .src('./src/fonts/*')
+    .pipe(gulp.dest('./build/fonts/'))
+}
+
 export function watch() {
-  gulp.watch('./src/views/**/*.pug', views);
-  gulp.watch('./src/images/**/*', images);
-  gulp.watch('./src/styles/**/*.less', styles);
+  gulp.watch('./src/views/**/*.pug', views)
+  gulp.watch('./src/images/**/*', images)
+  gulp.watch('./src/styles/**/*.less', styles)
 }
 
 export function serve() {
@@ -86,7 +100,7 @@ export function serve() {
   browserSync.watch('./build/**/*.*').on('change', browserSync.reload);
 }
 
-export const build = gulp.parallel(views, styles, images);
+export const build = gulp.parallel(views, styles, images, fonts);
 
 export default gulp.series(
   clean,
