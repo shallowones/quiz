@@ -1,12 +1,13 @@
 @import (inline) "normalize.css/normalize.css";
 
+@desktop-mini: ~"(max-width: 1025px)";
 @plan: ~"(max-width: 768px)";
 @mobile: ~"(max-width: 480px)";
 
 html {
   font-size: 16px;
   font-family: 'Muller', sans-serif;
-  font-weight: 600;
+  font-weight: 200;
   color: #fff;
   height: 100%;
 
@@ -60,12 +61,9 @@ a {
   overflow-x: hidden;
   background: url('../images/bg.jpg') no-repeat center;
   background-size: cover;
-  min-height: 100%;
+  height: 100%;
   overflow-y: auto;
-
-  &.show {
-    display: block;
-  }
+  position: relative;
 }
 
 .wrapper {
@@ -93,26 +91,51 @@ a {
   line-height: 1.75rem;
   margin-bottom: 2.375rem;
   text-align: center;
+
+  &.left {
+    text-align: left;
+  }
 }
 
 .article {
-  width: 19.375rem;
-  margin: 0 auto 3.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: baseline;
 
-  &__plus {
-    font-family: 'HelveticaNeue', sans-serif;
-    font-size: 2rem;
+  &.with-plus {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 2.75rem;
+
+    &:before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      top: ~"calc(50% - 8px)";
+      width: 22px;
+      height: 22px;
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+  }
+
+  &.with-mar {
+    margin: 0 1rem 1rem 0;
   }
 
   &__img {
+    display: inline-block;
+    vertical-align: baseline;
     width: 85px;
     height: 47px;
+    background: url('../images/mockup.png') no-repeat center;
   }
 
-  &__desc {}
+  &__desc {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 1rem;
+  }
 }
 
 .control {
@@ -168,23 +191,6 @@ a {
 
     &:focus {
       box-shadow: 0 0 12px rgba(255, 255, 255, .6);
-    }
-
-    &::-webkit-input-placeholder {
-      font-family: 'Muller', sans-serif;
-      font-weight: 600;
-    }
-    &::-moz-placeholder {
-      font-family: 'Muller', sans-serif;
-      font-weight: 600;
-    }
-    &:-ms-input-placeholder {
-      font-family: 'Muller', sans-serif;
-      font-weight: 600;
-    }
-    &:-moz-placeholder {
-      font-family: 'Muller', sans-serif;
-      font-weight: 600;
     }
   }
 
@@ -265,6 +271,8 @@ a {
   &__label {
     position: relative;
     padding-left: 1.875rem;
+    display: inline-block;
+    vertical-align: top;
     transition: .3s;
 
     &:before {
@@ -298,3 +306,458 @@ a {
   }
 }
 
+.detail {
+  height: 100%;
+  padding: 0 1.75rem 0 8.125rem;
+
+  &-right {
+    position: relative;
+    padding: 1rem 0 1rem 1.75rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media @desktop-mini {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media @plan {
+      margin-bottom: 1rem;
+      display: block;
+    }
+  }
+
+  @media @desktop-mini {
+    width: 100%;
+    padding-right: 1rem;
+  }
+
+  @media @plan {
+    display: block;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.progress {
+  width: 8.125rem;
+  height: 100%;
+  background-color: rgba(238, 68, 0, .8);
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &-info {
+    display: inline-block;
+    vertical-align: top;
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -127px;
+    top: ~"calc(50% - 5.25rem)";
+
+    @media @plan {
+      transform: rotate(0);
+      position: static;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__count {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+
+    @media @mobile {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__line {
+    display: inline-block;
+    vertical-align: top;
+    width: 24.125rem;
+    height: 5px;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 6px;
+    margin-bottom: .5rem;
+
+    &-active {
+      height: 100%;
+      background-color: #fff;
+      border-radius: 6px;
+      transition: .3s;
+    }
+  }
+
+  @media @plan {
+    width: 100%;
+    height: 6rem;
+    position: static;
+  }
+}
+
+.company {
+  position: relative;
+  font-size: 1.125rem;
+  padding: 1rem 1rem 1rem 5.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+  margin-bottom: 2rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5.25rem;
+    height: 100%;
+    background: url('../images/ping.png') no-repeat left center;
+    background-size: 60px 34px;
+  }
+}
+
+.answers {
+  display: none;
+
+  &-item {
+    width: 100%;
+    max-width: 64rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    margin-bottom: 1.25rem;
+    transition: .3s;
+
+    & > label {
+      display: flex;
+      align-items: center;
+      padding-right: 1rem;
+      min-height: 3.375rem;
+    }
+
+    &__input {
+      display: none;
+    }
+
+    &__label {
+      font-size: 1.125rem;
+      color: #333;
+      font-weight: 400;
+      display: block;
+      width: ~"calc(100% - 81px)";
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(255, 255, 255, .6);
+    }
+  }
+
+  & .check {
+    width: 35px;
+    height: 35px;
+    margin: 0 30px 0 16px;
+    background: #f05619 no-repeat center;
+    border-radius: 100%;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: data-uri('../images/svg/tick.svg') no-repeat center;
+      background-size: 20px;
+      opacity: 0;
+      transition: .3s;
+    }
+
+    &.checked {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.buttons {
+
+    & .answers-item {
+      width: 21.25rem;
+      border-radius: 2.5rem;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 1rem;
+
+      & .check {
+        background-color: #f7aa8c;
+
+        &.checked {
+          background-color: #f05619;
+        }
+      }
+
+      @media @mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &.images {
+
+    .answers-item {
+      width: 11.625rem;
+      border-radius: 6px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 1.25rem;
+      overflow: hidden;
+      border: 1px solid #fff;
+
+      & > label {
+        display: block;
+        padding-right: 0;
+        text-align: center;
+        position: relative;
+
+        & > img {
+          max-width: 100%;
+          max-height: 12rem;
+          margin-bottom: .5rem;
+        }
+      }
+
+      & .check {
+        background-color: rgba(238, 68, 0, .43);
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        margin: 0;
+      }
+
+      &__label {
+        font-size: .875rem;
+        padding: 0 1rem .625rem;
+        width: 100%;
+      }
+    }
+  }
+
+  &.text {
+
+    & .answers-item {
+      height: 3.375rem;
+      padding-left: 55px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 55px;
+        height: 100%;
+        background: data-uri('../images/svg/calculator.svg') no-repeat center;
+        background-size: 18px;
+      }
+
+      &.calendar:before {
+        background-image: data-uri('../images/svg/calendar.svg');
+      }
+
+      & > input[type="text"] {
+        width: 100%;
+        height: 100%;
+        padding-right: 1rem;
+        padding-top: 4px;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 1.25rem;
+        font-family: 'Muller', sans-serif;
+      }
+
+      &__label {
+        color: #fff;
+        margin-bottom: .5rem;
+
+        @media @plan {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  & .space-b {
+    max-width: 64rem;
+
+    @media @plan {
+      display: block;
+    }
+  }
+
+  &-left, &-right {
+    width: 45%;
+
+    @media @plan {
+      width: 100%;
+    }
+  }
+
+  @media @plan {
+    text-align: center;
+  }
+}
+
+.button {
+  font-family: inherit;
+  display: inline-block;
+  vertical-align: top;
+  padding: .875rem 3rem .625rem 5rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  position: relative;
+  color: #fff;
+  transition: .3s;
+  margin-bottom: 1rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4rem;
+    height: 100%;
+    background: data-uri('../images/svg/arrow.svg') no-repeat right center;
+    background-size: 20px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.next {
+    border: 1px solid #fff;
+    border-radius: 2.5rem;
+    font-size: 1.25rem;
+
+    &:hover {
+      box-shadow: 0 0 12px rgba(255, 255, 255, .6);
+    }
+  }
+
+  &.prev {
+    opacity: .7;
+    font-size: 1.125rem;
+    padding-left: 2rem;
+
+    &:before {
+      transform: rotate(180deg);
+      width: 2rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+
+  &-right {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.technology {
+  font-size: .875rem;
+  opacity: .5;
+  margin-top: 1rem;
+}
+
+.dont-know {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1rem;
+
+  & > input {
+    display: none;
+
+    &:checked + label {
+      color: #fff;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  & > label {
+    padding-left: 26px;
+    position: relative;
+    min-height: 14px;
+    color: #a9a9a9;
+    font-size: 14px;
+    padding-top: 1px;
+    transition: .3s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 14px;
+      height: 14px;
+      background-color: #999;
+      border-radius: 4px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 14px;
+      height: 14px;
+      background: data-uri('../images/svg/check.svg') no-repeat center;
+      background-size: 8px;
+      opacity: 0;
+      transition: .3s;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media @desktop-mini {
+    display: block;
+    margin-left: 0;
+    margin-top: .5rem;
+  }
+}
+
+::-webkit-input-placeholder {
+  font-family: 'Muller', sans-serif;
+}
+::-moz-placeholder {
+  font-family: 'Muller', sans-serif;
+}
+:-ms-input-placeholder {
+  font-family: 'Muller', sans-serif;
+}
+:-moz-placeholder {
+  font-family: 'Muller', sans-serif;
+}

@@ -2,20 +2,20 @@ extends layout
 
 block content
 
-  .page.show
-    .main.lf_q_start_page
+  .page.lf_q_results
+    .main
       .title Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры
 
-      .article
-        .article__plus +
-        img(src="images/mockup.png").article__img
-        .article__desc Полезная статья<br>Как сэкономить<br>до 100 000 рублей
+      .center
+        .article.with-plus.lf_q_gift
+          .article__img.lf_q_gift_img
+          .article__desc.lf_q_gift_text Полезная статья<br>Как сэкономить<br>до 100 000 рублей
 
       .space-b
         .control
           label(for="control-1").control__label Введите Вашу почту
           .control-area.mail
-            input(id="control-1", placeholder="ivanov yandex.ru").control__input
+            input(id="control-1", placeholder="ivanov@yandex.ru").control__input
           .control__desc Для отправки файла
         .control
           label(for="control-2").control__label Введите номер телефона
@@ -30,4 +30,126 @@ block content
       .agree
         input(type="checkbox", id="check-1", checked).agree__input
         label(for="check-1").agree__label Вы соглашаетесь с условиями обработки персональных данных
+
+  .page.lf_q_questions(style="display: block")
+    .detail
+      .detail-left.progress
+        .progress-info
+          .progress__count.lf_q_question_count.
+            Вопрос <span class="lf_q_current_question">1</span>
+            из <span class="lf_q_question_amount">10</span>
+          .progress__line.lf_q_progress_wrapper
+            .progress__line-active.lf_q_progress_active(style="width: 20%")
+          .progress__desc.lf_q_progress_text 20%
+
+      .detail-right
+        .company Пройдите тест и получите подборку квартир на электронную почту
+        .title.left.lf_q_question_text Какое расположение жилого комплекса<br>вы рассматриваете?
+
+        .answers.lf_q_item.lf_q_item_1(style="display: block")
+          .answers-item
+            label.lf_q_answer
+              .check.checked
+                input(type="radio", name="lf_q_radio_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+          .answers-item
+            label.lf_q_answer
+              .check
+                input(type="radio", name="lf_q_radio_2").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+          .answers-item
+            label.lf_q_answer
+              .check
+                input(type="radio", name="lf_q_radio_3").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+
+        .answers.buttons.lf_q_item.lf_q_item_2
+          .answers-item
+            label.lf_q_answer
+              .check
+                input(type="checkbox", name="lf_q_check_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Апартаменты
+          .answers-item
+            label.lf_q_answer
+              .check
+                input(type="checkbox", name="lf_q_check_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Апартаменты
+          .answers-item
+            label.lf_q_answer
+              .check
+                input(type="checkbox", name="lf_q_check_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Апартаменты
+          .answers-item
+            label.lf_q_answer
+              .check.checked
+                input(type="checkbox", name="lf_q_check_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Апартаменты
+          .answers-item
+            label.lf_q_answer
+              .check
+                input(type="checkbox", name="lf_q_check_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Апартаменты
+
+        .answers.images.lf_q_item.lf_q_item_3
+          .answers-item
+            label.lf_q_answer.image
+              img(src="images/answer.png").lf_q_answer_img
+              .check.checked
+                input(type="checkbox", name="lf_q_check_1").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+          .answers-item
+            label.lf_q_answer.image
+              img(src="images/answer.png").lf_q_answer_img
+              .check
+                input(type="checkbox", name="lf_q_check_2").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+          .answers-item
+            label.lf_q_answer.image
+              img(src="images/answer.png").lf_q_answer_img
+              .check
+                input(type="checkbox", name="lf_q_check_3").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+          .answers-item
+            label.lf_q_answer.image
+              img(src="images/answer.png").lf_q_answer_img
+              .check
+                input(type="checkbox", name="lf_q_check_4").answers-item__input
+              span.answers-item__label.lf_q_answer_text Мне нужны только апартаменты
+
+        .answers.text.lf_q_item.lf_q_item_4
+          .answers-item__label Введите высоту
+            span.dont-know
+              input(type="checkbox", id="dont-1")
+              label(for="dont-1") Я не знаю
+          .answers-item
+            input(type="text", placeholder="120 x 130 сантиметров").lf_q_answer
+          .space-b
+            .answers-left
+              .answers-item__label Введите длину
+                span.dont-know
+                  input(type="checkbox", id="dont-2", checked)
+                  label(for="dont-2") Я не знаю
+              .answers-item
+                input(type="text", placeholder="12 x 13 сантиметров").lf_q_answer
+            .answers-right
+              .answers-item__label Введите сроки
+                span.dont-know
+                  input(type="checkbox", id="dont-3")
+                  label(for="dont-3") Можно не спешить
+              .answers-item.calendar
+                input(type="text", placeholder="2 октября 2017").lf_q_answer
+
+                
+        .bottom
+          .bottom-left
+            button(type="button").button.prev.lf_q_back Назад
+          .bottom-right
+            .article.with-mar.lf_q_gift
+              .article__img.lf_q_gift_img
+              .article__desc.lf_q_gift_text Полезная статья<br>Как сэкономить<br>до 100 000 рублей
+            button(type="button").button.next.lf_q_next Далее
+
+        .technology Работает на технологии leadforest
+
+
 

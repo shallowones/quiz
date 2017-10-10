@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div class="page show">
-      <div class="main lf_q_start_page">
+    <div class="page lf_q_results">
+      <div class="main">
         <div class="title">Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры</div>
-        <div class="article">
-          <div class="article__plus">+</div><img class="article__img" src="images/mockup.png">
-          <div class="article__desc">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+        <div class="center">
+          <div class="article with-plus lf_q_gift">
+            <div class="article__img lf_q_gift_img"></div>
+            <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+          </div>
         </div>
         <div class="space-b">
           <div class="control">
             <label class="control__label" for="control-1">Введите Вашу почту</label>
             <div class="control-area mail">
-              <input class="control__input" id="control-1" placeholder="ivanov yandex.ru">
+              <input class="control__input" id="control-1" placeholder="ivanov@yandex.ru">
             </div>
             <div class="control__desc">Для отправки файла</div>
           </div>
@@ -40,6 +42,155 @@
         <div class="agree">
           <input class="agree__input" type="checkbox" id="check-1" checked>
           <label class="agree__label" for="check-1">Вы соглашаетесь с условиями обработки персональных данных</label>
+        </div>
+      </div>
+    </div>
+    <div class="page lf_q_questions" style="display: block;">
+      <div class="detail">
+        <div class="detail-left progress">
+          <div class="progress-info">
+            <div class="progress__count lf_q_question_count">
+              Вопрос <span class="lf_q_current_question">1</span>
+              из <span class="lf_q_question_amount">10</span>
+            </div>
+            <div class="progress__line lf_q_progress_wrapper">
+              <div class="progress__line-active lf_q_progress_active" style="width: 20%;"></div>
+            </div>
+            <div class="progress__desc lf_q_progress_text">20%</div>
+          </div>
+        </div>
+        <div class="detail-right">
+          <div class="company">Пройдите тест и получите подборку квартир на электронную почту</div>
+          <div class="title left lf_q_question_text">Какое расположение жилого комплекса<br>вы рассматриваете?</div>
+          <div class="answers lf_q_item lf_q_item_1" style="display: block;">
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check checked">
+                  <input class="answers-item__input" type="radio" name="lf_q_radio_1">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check">
+                  <input class="answers-item__input" type="radio" name="lf_q_radio_2">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check">
+                  <input class="answers-item__input" type="radio" name="lf_q_radio_3">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+          </div>
+          <div class="answers buttons lf_q_item lf_q_item_2">
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_1">
+                </div><span class="answers-item__label lf_q_answer_text">Апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_1">
+                </div><span class="answers-item__label lf_q_answer_text">Апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_1">
+                </div><span class="answers-item__label lf_q_answer_text">Апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check checked">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_1">
+                </div><span class="answers-item__label lf_q_answer_text">Апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_1">
+                </div><span class="answers-item__label lf_q_answer_text">Апартаменты</span>
+              </label>
+            </div>
+          </div>
+          <div class="answers images lf_q_item lf_q_item_3">
+            <div class="answers-item">
+              <label class="lf_q_answer image"><img class="lf_q_answer_img" src="images/answer.png">
+                <div class="check checked">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_1">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer image"><img class="lf_q_answer_img" src="images/answer.png">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_2">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer image"><img class="lf_q_answer_img" src="images/answer.png">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_3">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+            <div class="answers-item">
+              <label class="lf_q_answer image"><img class="lf_q_answer_img" src="images/answer.png">
+                <div class="check">
+                  <input class="answers-item__input" type="checkbox" name="lf_q_check_4">
+                </div><span class="answers-item__label lf_q_answer_text">Мне нужны только апартаменты</span>
+              </label>
+            </div>
+          </div>
+          <div class="answers text lf_q_item lf_q_item_4">
+            <div class="answers-item__label">Введите высоту<span class="dont-know">
+                <input type="checkbox" id="dont-1">
+                <label for="dont-1">Я не знаю</label></span></div>
+            <div class="answers-item">
+              <input class="lf_q_answer" type="text" placeholder="120 x 130 сантиметров">
+            </div>
+            <div class="space-b">
+              <div class="answers-left">
+                <div class="answers-item__label">Введите длину<span class="dont-know">
+                    <input type="checkbox" id="dont-2" checked>
+                    <label for="dont-2">Я не знаю</label></span></div>
+                <div class="answers-item">
+                  <input class="lf_q_answer" type="text" placeholder="12 x 13 сантиметров">
+                </div>
+              </div>
+              <div class="answers-right">
+                <div class="answers-item__label">Введите сроки<span class="dont-know">
+                    <input type="checkbox" id="dont-3">
+                    <label for="dont-3">Можно не спешить</label></span></div>
+                <div class="answers-item calendar">
+                  <input class="lf_q_answer" type="text" placeholder="2 октября 2017">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-left">
+              <button class="button prev lf_q_back" type="button">Назад</button>
+            </div>
+            <div class="bottom-right">
+              <div class="article with-mar lf_q_gift">
+                <div class="article__img lf_q_gift_img"></div>
+                <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+              </div>
+              <button class="button next lf_q_next" type="button">Далее</button>
+            </div>
+          </div>
+          <div class="technology">Работает на технологии leadforest</div>
         </div>
       </div>
     </div>
