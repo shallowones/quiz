@@ -2,6 +2,14 @@ extends layout
 
 block content
 
+  // главная страница
+  .page.lf_q_start
+    .main.start
+      .title Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры
+      .title__desc Получите подборку 10 лучших предложений, которые полностью<br>подходят под ваши параметры
+      .center
+        .control
+          button(type="button").control__button.lf_q_start_page Открыть результаты
   // страница результатов
   .page.lf_q_results(style="display: block")
     .main.lf_q_main_form_wrapper
@@ -27,7 +35,7 @@ block content
 
         .center
           .control
-            button(type="button")#lf_q_main_form_button.control__button.lf_q_start Открыть результаты
+            button(type="button")#lf_q_main_form_button.control__button Открыть результаты
 
         .agree
           input(type="checkbox", id="lf_q_agreement", checked).agree__input
@@ -43,7 +51,7 @@ block content
             из <span class="lf_q_question_amount">10</span>
           .progress__line.lf_q_progress_wrapper
             .progress__line-active.lf_q_progress_active(style="width: 20%")
-          .progress__desc.lf_q_progress_text 20%
+          .progress__text.lf_q_progress_text 20%
 
       .detail-right
         .company Пройдите тест и получите подборку квартир на электронную почту
@@ -179,7 +187,7 @@ block content
             из <span class="lf_q_question_amount">10</span>
           .progress__line.lf_q_progress_wrapper
             .progress__line-active.lf_q_progress_active(style="width: 20%")
-          .progress__desc.lf_q_progress_text 20%
+          .progress__text.lf_q_progress_text 20%
 
       .detail-right.analysis
         .lf_q_analysis Подготовка результата теста <span>94%</span>
@@ -205,7 +213,7 @@ block content
             span  124
             |  раз(а)
       // правая часть
-      .detail-right
+      .detail-right(style="display: none")
         .title.left Получите подборку 10 лучших<br>
           | предложений, которые полностью<br>
           | подходят под ваши параметры
@@ -229,11 +237,11 @@ block content
             input(type="checkbox", id="lf_q_agreement2", checked).agree__input
             label(for="lf_q_agreement2").agree__label Вы соглашаетесь с условиями обработки персональных данных
       // sms
-      .detail-right(style="display: none")
+      .detail-right
         button(type="button").button.prev.lf_q_back Изменить номер
         .lf_q_verify_popup
           .title.left.small-mar.lf_q_verify_form_h На номер <span>7 999 999 99 99</span> было отправлено<br>SMS сообщение с кодом подтверждения
-          .send-again.lf_q_verify_send_again Повторная отправка через <span>0:59</span>
+          .send-again.lf_q_verify_send_again Повторная отправка через <span class="lf_q_verify_timeout">0:59</span>
           form(action="#", id="lf_q_verify_form")
             .control
               .control-area
@@ -247,13 +255,13 @@ block content
 
   // форма захвата [MINI]
   .page
-    .detail.big
-      .detail-left.progress
+    .detail.big.mini
+      .detail-left.progress.lf_q_variative
         .progress__title Подходят под<br>Ваши параметры
-        .progress__static
+        .progress__static.lf_q_variative_text
           span 17
           |  квартир
-        .progress__static
+        .progress__static.lf_q_variative_img
           span 3
           .discount
           .progress__static-desc на 3 из них действуют<br>

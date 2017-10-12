@@ -521,6 +521,22 @@ a {
     padding: 1rem;
   }
 }
+.main.start {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .title {
   font-size: 1.75rem;
   line-height: 1.75rem;
@@ -532,6 +548,15 @@ a {
 }
 .title.small-mar {
   margin-bottom: 1rem;
+}
+.title__desc {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .title__desc {
+    margin-bottom: 2rem;
+  }
 }
 .article {
   margin: 0 auto;
@@ -775,7 +800,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
+  padding: 0 0 0 26.5rem;
 }
 .detail.big .detail-left {
   width: auto;
@@ -811,6 +836,11 @@ a {
     margin-bottom: 1rem;
   }
 }
+@media (max-width: 1025px) {
+  .detail.big .detail-right {
+    padding: 2rem 1rem 2rem 2rem;
+  }
+}
 @media (max-width: 768px) {
   .detail.big .detail-right {
     padding: 1rem;
@@ -818,8 +848,10 @@ a {
     margin-bottom: 0;
   }
 }
-.detail.big .progress {
-  position: static;
+@media (max-width: 768px) {
+  .detail.big .progress {
+    position: static;
+  }
 }
 .detail.big .control {
   display: block;
@@ -885,9 +917,31 @@ a {
     margin-bottom: 1rem;
   }
 }
+@media (max-width: 1025px) {
+  .detail.big .article.with-plus {
+    padding-left: 35px;
+  }
+}
+.detail.big.mini {
+  padding-left: 18rem;
+}
+.detail.big.mini .detail-left {
+  max-width: 18rem;
+}
+@media (max-width: 768px) {
+  .detail.big.mini .detail-left {
+    max-width: initial;
+  }
+}
+@media (max-width: 768px) {
+  .detail.big.mini {
+    padding-left: 0;
+  }
+}
 @media (max-width: 768px) {
   .detail.big {
     display: block;
+    padding-left: 0;
   }
 }
 @media (max-width: 1025px) {
@@ -1099,10 +1153,8 @@ a {
 }
 @media (max-width: 1025px) {
   .visitors.inline {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    display: block;
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -1408,9 +1460,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   margin-top: auto;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 .bottom-right {
   margin-left: auto;

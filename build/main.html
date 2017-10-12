@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <!-- главная страница-->
+    <div class="page lf_q_start">
+      <div class="main start">
+        <div class="title">Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры</div>
+        <div class="title__desc">Получите подборку 10 лучших предложений, которые полностью<br>подходят под ваши параметры</div>
+        <div class="center">
+          <div class="control">
+            <button class="control__button lf_q_start_page" type="button">Открыть результаты</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- страница результатов-->
     <div class="page lf_q_results" style="display: block;">
       <div class="main lf_q_main_form_wrapper">
@@ -38,7 +50,7 @@
           </div>
           <div class="center">
             <div class="control">
-              <button class="control__button lf_q_start" type="button" id="lf_q_main_form_button">Открыть результаты</button>
+              <button class="control__button" type="button" id="lf_q_main_form_button">Открыть результаты</button>
             </div>
           </div>
           <div class="agree">
@@ -60,7 +72,7 @@
             <div class="progress__line lf_q_progress_wrapper">
               <div class="progress__line-active lf_q_progress_active" style="width: 20%;"></div>
             </div>
-            <div class="progress__desc lf_q_progress_text">20%</div>
+            <div class="progress__text lf_q_progress_text">20%</div>
           </div>
         </div>
         <div class="detail-right">
@@ -230,7 +242,7 @@
             <div class="progress__line lf_q_progress_wrapper">
               <div class="progress__line-active lf_q_progress_active" style="width: 20%;"></div>
             </div>
-            <div class="progress__desc lf_q_progress_text">20%</div>
+            <div class="progress__text lf_q_progress_text">20%</div>
           </div>
         </div>
         <div class="detail-right analysis">
@@ -255,7 +267,7 @@
           </div>
         </div>
         <!-- правая часть-->
-        <div class="detail-right">
+        <div class="detail-right" style="display: none;">
           <div class="title left">
             Получите подборку 10 лучших<br>предложений, которые полностью<br>
             подходят под ваши параметры
@@ -289,11 +301,11 @@
           </form>
         </div>
         <!-- sms-->
-        <div class="detail-right" style="display: none;">
+        <div class="detail-right">
           <button class="button prev lf_q_back" type="button">Изменить номер</button>
           <div class="lf_q_verify_popup">
             <div class="title left small-mar lf_q_verify_form_h">На номер <span>7 999 999 99 99</span> было отправлено<br>SMS сообщение с кодом подтверждения</div>
-            <div class="send-again lf_q_verify_send_again">Повторная отправка через <span>0:59</span></div>
+            <div class="send-again lf_q_verify_send_again">Повторная отправка через <span class="lf_q_verify_timeout">0:59</span></div>
             <form action="#" id="lf_q_verify_form">
               <div class="control">
                 <div class="control-area">
@@ -316,11 +328,11 @@
     </div>
     <!-- форма захвата [MINI]-->
     <div class="page">
-      <div class="detail big">
-        <div class="detail-left progress">
+      <div class="detail big mini">
+        <div class="detail-left progress lf_q_variative">
           <div class="progress__title">Подходят под<br>Ваши параметры</div>
-          <div class="progress__static"><span>17</span> квартир</div>
-          <div class="progress__static"><span>3</span>
+          <div class="progress__static lf_q_variative_text"><span>17</span> квартир</div>
+          <div class="progress__static lf_q_variative_img"><span>3</span>
             <div class="discount"></div>
             <div class="progress__static-desc">
               на 3 из них действуют<br>специальные условия<br>

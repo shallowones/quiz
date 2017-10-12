@@ -84,6 +84,14 @@ a {
   @media @mobile {
     padding: 1rem;
   }
+
+  &.start {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .title {
@@ -98,6 +106,15 @@ a {
 
   &.small-mar {
     margin-bottom: 1rem;
+  }
+
+  &__desc {
+    margin-bottom: 5rem;
+    text-align: center;
+
+    @media @plan {
+      margin-bottom: 2rem;
+    }
   }
 }
 
@@ -365,7 +382,7 @@ a {
 
   &.big {
     display: flex;
-    padding: 0;
+    padding: 0 0 0 26.5rem;
 
     & .detail-left {
       width: auto;
@@ -403,6 +420,10 @@ a {
         }
       }
 
+      @media @desktop-mini {
+        padding: 2rem 1rem 2rem 2rem;
+      }
+
       @media @plan {
         padding: 1rem;
         text-align: center;
@@ -411,7 +432,10 @@ a {
     }
 
     & .progress {
-      position: static;
+
+      @media @plan {
+        position: static;
+      }
     }
 
     & .control {
@@ -481,10 +505,34 @@ a {
       @media @plan {
         margin-bottom: 1rem;
       }
+
+      &.with-plus {
+
+        @media @desktop-mini {
+          padding-left: 35px;
+        }
+      }
+    }
+
+    &.mini {
+      padding-left: 18rem;
+
+      & .detail-left {
+        max-width: 18rem;
+
+        @media @plan {
+          max-width: initial;
+        }
+      }
+
+      @media @plan {
+        padding-left: 0;
+      }
     }
 
     @media @plan {
       display: block;
+      padding-left: 0;
     }
   }
 
@@ -687,7 +735,8 @@ a {
     }
 
     @media @desktop-mini {
-      flex-direction: column-reverse;
+      display: block;
+      margin-bottom: 1rem;
     }
 
     @media @plan {
@@ -1034,8 +1083,8 @@ a {
 
 .bottom {
   display: flex;
-  flex-wrap: wrap;
   margin-top: auto;
+  align-items: flex-end;
 
   &-right {
     margin-left: auto;
