@@ -10,58 +10,86 @@
   </head>
   <body>
     <!-- главная страница-->
-    <div class="page lf_q_start">
+    <div class="page" style="display: block;">
       <div class="main start">
         <div class="title">Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры</div>
         <div class="title__desc">Получите подборку 10 лучших предложений, которые полностью<br>подходят под ваши параметры</div>
         <div class="center">
           <div class="control">
-            <button class="control__button lf_q_start_page" type="button">Открыть результаты</button>
+            <button class="control__button lf_q_start" type="button">Пройти онлайн-тест</button>
           </div>
         </div>
       </div>
     </div>
     <!-- страница результатов-->
-    <div class="page lf_q_results" style="display: block;">
-      <div class="main lf_q_main_form_wrapper">
-        <div class="title lf_q_main_form_h">Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры</div>
-        <form action="#" id="lf_q_main_form">
-          <div class="center">
-            <div class="article with-plus lf_q_gift">
-              <div class="article__img lf_q_gift_img"></div>
-              <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
-            </div>
-          </div>
-          <div class="space-b">
-            <div class="control">
-              <label class="control__label" for="control-1">Введите Вашу почту</label>
-              <div class="control-area mail">
-                <input class="control__input" id="control-1" name="email" placeholder="ivanov@yandex.ru">
+    <div class="page lf_q_results">
+      <div class="main">
+        <!-- форма-->
+        <div class="lf_q_main_form_wrapper">
+          <div class="title lf_q_main_form_h">Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры</div>
+          <form action="#" id="lf_q_main_form">
+            <div class="center">
+              <div class="article with-plus lf_q_gift">
+                <div class="article__img lf_q_gift_img"></div>
+                <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
               </div>
-              <div class="control__desc">Для отправки файла</div>
             </div>
-            <div class="control">
-              <label class="control__label" for="control-2">Введите номер телефона</label>
-              <div class="control-area phone">
-                <input class="control__input" id="control-2" name="phone" placeholder="7 999 999 99 99">
+            <div class="space-b">
+              <div class="control">
+                <label class="control__label" for="control-1">Введите Вашу почту</label>
+                <div class="control-area mail">
+                  <input class="control__input" id="control-1" name="email" placeholder="ivanov@yandex.ru">
+                </div>
+                <div class="control__desc">Для отправки файла</div>
               </div>
-              <div class="control__desc">Для смс подтверждения</div>
+              <div class="control">
+                <label class="control__label" for="control-2">Введите номер телефона</label>
+                <div class="control-area phone">
+                  <input class="control__input" id="control-2" name="phone" placeholder="7 999 999 99 99">
+                </div>
+                <div class="control__desc">Для смс подтверждения</div>
+              </div>
             </div>
-          </div>
-          <div class="center">
-            <div class="control">
-              <button class="control__button" type="button" id="lf_q_main_form_button">Открыть результаты</button>
+            <div class="center">
+              <div class="control">
+                <button class="control__button" type="button" id="lf_q_main_form_button">Открыть результаты</button>
+              </div>
             </div>
+            <div class="agree">
+              <input class="agree__input" type="checkbox" id="lf_q_agreement" checked>
+              <label class="agree__label" for="lf_q_agreement">Вы соглашаетесь с условиями обработки персональных данных</label>
+            </div>
+          </form>
+        </div>
+        <!-- sms-->
+        <div class="lf_q_main_form_wrapper" style="display: none;">
+          <button class="button prev lf_q_back" type="button">Изменить номер</button>
+          <div class="lf_q_verify_popup">
+            <div class="title small-mar lf_q_verify_form_h">На номер <span>7 999 999 99 99</span> было отправлено<br>SMS сообщение с кодом подтверждения</div>
+            <div class="send-again lf_q_verify_timeout">Повторная отправка через <span>0:59</span></div>
+            <form action="#" id="lf_q_verify_form">
+              <div class="control">
+                <div class="control-area">
+                  <input class="control__input" type="text" id="lf_q_verify_code" placeholder="Введите полученный код">
+                </div>
+              </div>
+              <div class="control">
+                <div class="control-area">
+                  <button class="control__button" type="button" id="f_q_verify_form_button">Открыть результаты</button>
+                </div>
+              </div>
+              <div class="article with-plus lf_q_gift">
+                <div class="article__img lf_q_gift_img"></div>
+                <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+              </div>
+            </form>
           </div>
-          <div class="agree">
-            <input class="agree__input" type="checkbox" id="lf_q_agreement" checked>
-            <label class="agree__label" for="lf_q_agreement">Вы соглашаетесь с условиями обработки персональных данных</label>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
     <!-- страница вопросов-->
     <div class="page lf_q_questions">
+      <!-- вопросы-->
       <div class="detail">
         <div class="detail-left progress">
           <div class="progress-info">
@@ -229,50 +257,36 @@
           <div class="technology">Работает на технологии leadforest</div>
         </div>
       </div>
-    </div>
-    <!-- страница анализа-->
-    <div class="page">
-      <div class="detail">
-        <div class="detail-left progress">
-          <div class="progress-info">
-            <div class="progress__count lf_q_question_count">
-              Вопрос <span class="lf_q_current_question">1</span>
-              из <span class="lf_q_question_amount">10</span>
-            </div>
-            <div class="progress__line lf_q_progress_wrapper">
-              <div class="progress__line-active lf_q_progress_active" style="width: 20%;"></div>
-            </div>
-            <div class="progress__text lf_q_progress_text">20%</div>
-          </div>
-        </div>
+      <!-- страница анализа-->
+      <div class="detail" style="display: none;">
         <div class="detail-right analysis">
           <div class="lf_q_analysis">Подготовка результата теста <span>94%</span></div>
         </div>
       </div>
     </div>
     <!-- форма захвата [BIG]-->
-    <div class="page">
-      <div class="detail big">
-        <div class="detail-left progress">
-          <div class="progress__title">Вам подойдет коляска типа книжка</div>
-          <div class="progress__img">
+    <div class="page lf_q_results">
+      <div class="detail big lf_q_main_form_wrapper">
+        <div class="detail-left progress lf_q_variable">
+          <div class="progress__title lf_q_variable_title">Вам подойдет коляска типа книжка</div>
+          <div class="progress__img lf_q_variable_img">
             <!-- с видео (подразумевается iframe-вставка вместо img)--><img src="images/video.png">
             <!-- с картинкой--><img src="images/book.png" style="display: none;">
             <!-- с макбуком--><img src="images/mac.png" style="display: none;">
           </div>
-          <div class="progress__desc">Для деток старше года, которые уже умеют сидеть. Лучший вариант - это коляска-книжка.</div>
+          <div class="progress__desc lf_q_variable_text">Для деток старше года, которые уже умеют сидеть. Лучший вариант - это коляска-книжка.</div>
           <div class="visitors lf_q_visitors">
             <div class="visitors__item people lf_q_visitors_now"><span>92</span> пользователей сейчас проходят тест</div>
             <div class="visitors__item test lf_q_visitors_today">Сегодня тест был пройден<span> 124</span> раз(а)</div>
           </div>
         </div>
         <!-- правая часть-->
-        <div class="detail-right" style="display: none;">
-          <div class="title left">
+        <div class="detail-right">
+          <div class="title left lf_q_main_form_h">
             Получите подборку 10 лучших<br>предложений, которые полностью<br>
             подходят под ваши параметры
           </div>
-          <form action="#">
+          <form action="#" id="lf_q_main_form">
             <div class="article with-plus lf_q_gift">
               <div class="article__img lf_q_gift_img"></div>
               <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
@@ -292,20 +306,20 @@
               <div class="control__desc">Для смс подтверждения</div>
             </div>
             <div class="control">
-              <button class="control__button lf_q_start" type="button" id="lf_q_main_form_button2">Открыть результаты</button>
+              <button class="control__button" type="button" id="lf_q_main_form_button">Открыть результаты</button>
             </div>
             <div class="agree">
-              <input class="agree__input" type="checkbox" id="lf_q_agreement2" checked>
-              <label class="agree__label" for="lf_q_agreement2">Вы соглашаетесь с условиями обработки персональных данных</label>
+              <input class="agree__input" type="checkbox" id="lf_q_agreement" checked>
+              <label class="agree__label" for="lf_q_agreement">Вы соглашаетесь с условиями обработки персональных данных</label>
             </div>
           </form>
         </div>
         <!-- sms-->
-        <div class="detail-right">
+        <div class="detail-right" style="display: none;">
           <button class="button prev lf_q_back" type="button">Изменить номер</button>
           <div class="lf_q_verify_popup">
             <div class="title left small-mar lf_q_verify_form_h">На номер <span>7 999 999 99 99</span> было отправлено<br>SMS сообщение с кодом подтверждения</div>
-            <div class="send-again lf_q_verify_send_again">Повторная отправка через <span class="lf_q_verify_timeout">0:59</span></div>
+            <div class="send-again lf_q_verify_timeout">Повторная отправка через <span>0:59</span></div>
             <form action="#" id="lf_q_verify_form">
               <div class="control">
                 <div class="control-area">
@@ -314,7 +328,7 @@
               </div>
               <div class="control">
                 <div class="control-area">
-                  <button class="control__button lf_q_start" type="button" id="f_q_verify_form_button">Открыть результаты</button>
+                  <button class="control__button" type="button" id="f_q_verify_form_button">Открыть результаты</button>
                 </div>
               </div>
               <div class="article with-plus lf_q_gift">
@@ -327,10 +341,10 @@
       </div>
     </div>
     <!-- форма захвата [MINI]-->
-    <div class="page">
-      <div class="detail big mini">
+    <div class="page lf_q_results">
+      <div class="detail big mini lf_q_main_form_wrapper">
         <div class="detail-left progress lf_q_variative">
-          <div class="progress__title">Подходят под<br>Ваши параметры</div>
+          <div class="progress__title lf_q_variable_title">Подходят под<br>Ваши параметры</div>
           <div class="progress__static lf_q_variative_text"><span>17</span> квартир</div>
           <div class="progress__static lf_q_variative_img"><span>3</span>
             <div class="discount"></div>
@@ -340,37 +354,64 @@
             </div>
           </div>
         </div>
+        <!-- форма-->
         <div class="detail-right">
           <div class="visitors inline lf_q_visitors">
             <div class="visitors__item people lf_q_visitors_now"><span>92</span> пользователей сейчас проходят тест</div>
             <div class="visitors__item test lf_q_visitors_today">Сегодня тест был пройден<span> 124</span> раз(а)</div>
           </div>
-          <div class="title left">
+          <div class="title left lf_q_main_form_h">
             Получите подборку 10 лучших предложений,<br>которые полностью подходят под ваши параметры</div>
-          <div class="control">
-            <label class="control__label" for="contr-1">Введите Вашу почту</label>
-            <div class="control-area mail">
-              <input class="control__input" id="contr-1" name="email" placeholder="ivanov@yandex.ru">
+          <form action="#" id="lf_q_main_form">
+            <div class="control">
+              <label class="control__label" for="contr-1">Введите Вашу почту</label>
+              <div class="control-area mail">
+                <input class="control__input" id="contr-1" name="email" placeholder="ivanov@yandex.ru">
+              </div>
+              <div class="control__desc">Для отправки файла</div>
             </div>
-            <div class="control__desc">Для отправки файла</div>
-          </div>
-          <div class="control">
-            <label class="control__label" for="contr-2">Введите номер телефона</label>
-            <div class="control-area phone">
-              <input class="control__input" id="contr-2" name="phone" placeholder="7 999 999 99 99">
+            <div class="control">
+              <label class="control__label" for="contr-2">Введите номер телефона</label>
+              <div class="control-area phone">
+                <input class="control__input" id="contr-2" name="phone" placeholder="7 999 999 99 99">
+              </div>
+              <div class="control__desc">Для смс подтверждения</div>
             </div>
-            <div class="control__desc">Для смс подтверждения</div>
-          </div>
-          <div class="control">
-            <button class="control__button lf_q_start" type="button" id="lf_q_main_form_button3">Открыть результаты</button>
-            <div class="article with-plus lf_q_gift">
-              <div class="article__img lf_q_gift_img"></div>
-              <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+            <div class="control">
+              <button class="control__button" type="button" id="lf_q_main_form_button">Открыть результаты</button>
+              <div class="article with-plus lf_q_gift">
+                <div class="article__img lf_q_gift_img"></div>
+                <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+              </div>
             </div>
-          </div>
-          <div class="agree">
-            <input class="agree__input" type="checkbox" id="lf_q_agreement3" checked>
-            <label class="agree__label" for="lf_q_agreement3">Вы соглашаетесь с условиями обработки персональных данных</label>
+            <div class="agree">
+              <input class="agree__input" type="checkbox" id="lf_q_agreement" checked>
+              <label class="agree__label" for="lf_q_agreement">Вы соглашаетесь с условиями обработки персональных данных</label>
+            </div>
+          </form>
+        </div>
+        <!-- sms-->
+        <div class="detail-right" style="display: none;">
+          <button class="button prev lf_q_back" type="button">Изменить номер</button>
+          <div class="lf_q_verify_popup">
+            <div class="title left small-mar lf_q_verify_form_h">На номер <span>7 999 999 99 99</span> было отправлено<br>SMS сообщение с кодом подтверждения</div>
+            <div class="send-again lf_q_verify_timeout">Повторная отправка через <span>0:59</span></div>
+            <form action="#" id="lf_q_verify_form">
+              <div class="control">
+                <div class="control-area">
+                  <input class="control__input" type="text" id="lf_q_verify_code" placeholder="Введите полученный код">
+                </div>
+              </div>
+              <div class="control">
+                <div class="control-area">
+                  <button class="control__button" type="button" id="f_q_verify_form_button">Открыть результаты</button>
+                </div>
+              </div>
+              <div class="article with-plus lf_q_gift">
+                <div class="article__img lf_q_gift_img"></div>
+                <div class="article__desc lf_q_gift_text">Полезная статья<br>Как сэкономить<br>до 100 000 рублей</div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -75,6 +75,7 @@ a {
   width: 769px;
   margin: 0 auto;
   padding: 4.5rem 0;
+  text-align: center;
 
   @media @plan {
     width: 100%;
@@ -91,6 +92,11 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    & .control__button:before {
+      background-image: data-uri('../images/svg/play-button.svg');
+      background-size: 24px;
+    }
   }
 }
 
