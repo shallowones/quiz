@@ -3,7 +3,7 @@ extends layout
 block content
 
   // главная страница
-  .page(style="display: block")
+  .page
     .main.start
       .title Получите подборку 10 лучших предложений, которые полностью подходят под ваши параметры
       .title__desc Получите подборку 10 лучших предложений, которые полностью<br>подходят под ваши параметры
@@ -55,7 +55,7 @@ block content
               .article__img.lf_q_gift_img
               .article__desc.lf_q_gift_text Полезная статья<br>Как сэкономить<br>до 100 000 рублей
   // страница вопросов
-  .page.lf_q_questions
+  .page.lf_q_questions(style="display: block")
     // вопросы
     .detail
       .detail-left.progress

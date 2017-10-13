@@ -547,6 +547,7 @@ a {
   line-height: 1.75rem;
   margin-bottom: 2.375rem;
   text-align: center;
+  max-width: 100%;
 }
 .title.left {
   text-align: left;
@@ -817,7 +818,7 @@ a {
   .detail.big .detail-left {
     height: auto;
     width: 100%;
-    max-width: initial;
+    max-width: 100%;
     padding: 1rem;
     text-align: center;
   }
@@ -935,7 +936,7 @@ a {
 }
 @media (max-width: 768px) {
   .detail.big.mini .detail-left {
-    max-width: initial;
+    max-width: 100%;
   }
 }
 @media (max-width: 768px) {
@@ -1209,7 +1210,8 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding-right: 1rem;
-  min-height: 3.375rem;
+  height: 3.375rem;
+  text-align: left;
 }
 .answers-item__input {
   display: none;
@@ -1227,19 +1229,27 @@ a {
 }
 .answers .check {
   width: 35px;
-  height: 35px;
+  height: 100%;
   margin: 0 30px 0 16px;
-  background: #f05619 no-repeat center;
-  border-radius: 100%;
   position: relative;
+}
+.answers .check:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(50% - 17px);
+  width: 100%;
+  height: 35px;
+  background-color: #f05619;
+  border-radius: 100%;
 }
 .answers .check:after {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
+  top: calc(50% - 17px);
   width: 100%;
-  height: 100%;
+  height: 35px;
   background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20512%20512%22%20style%3D%22enable-background%3Anew%200%200%20512%20512%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%22512px%22%20height%3D%22512px%22%3E%0A%3Cg%3E%0A%09%3Cg%3E%0A%09%09%3Cpath%20d%3D%22M504.502%2C75.496c-9.997-9.998-26.205-9.998-36.204%2C0L161.594%2C382.203L43.702%2C264.311c-9.997-9.998-26.205-9.997-36.204%2C0%20%20%20%20c-9.998%2C9.997-9.998%2C26.205%2C0%2C36.203l135.994%2C135.992c9.994%2C9.997%2C26.214%2C9.99%2C36.204%2C0L504.502%2C111.7%20%20%20%20C514.5%2C101.703%2C514.499%2C85.494%2C504.502%2C75.496z%22%20fill%3D%22%23FFFFFF%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A") no-repeat center;
   background-size: 20px;
   opacity: 0;
@@ -1255,10 +1265,10 @@ a {
   vertical-align: top;
   margin-right: 1rem;
 }
-.answers.buttons .answers-item .check {
+.answers.buttons .answers-item .check::before {
   background-color: #f7aa8c;
 }
-.answers.buttons .answers-item .check.checked {
+.answers.buttons .answers-item .check.checked:before {
   background-color: #f05619;
 }
 @media (max-width: 480px) {
@@ -1280,6 +1290,7 @@ a {
   padding-right: 0;
   text-align: center;
   position: relative;
+  height: auto;
 }
 .answers.images .answers-item > label > img {
   max-width: 100%;
@@ -1287,11 +1298,17 @@ a {
   margin-bottom: .5rem;
 }
 .answers.images .answers-item .check {
-  background-color: rgba(238, 68, 0, 0.43);
   position: absolute;
   right: 8px;
   top: 8px;
   margin: 0;
+}
+.answers.images .answers-item .check:before {
+  top: 0;
+  background-color: rgba(238, 68, 0, 0.43);
+}
+.answers.images .answers-item .check:after {
+  top: 0;
 }
 .answers.images .answers-item__label {
   font-size: .875rem;
